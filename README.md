@@ -13,7 +13,7 @@ The objective of this project is to implement, evaluate, and compare five distin
 
 ## c. GitHub Repository Link
 
-[Insert Your Public GitHub Repo URL Here, e.g., https://github.com/yourusername/bits-ml-assignment2]
+[Insert Your Public GitHub Repo URL Here, e.g., https://github.com/Muruvazhakan/ML_Classification_Assignment2]
 
 ## d. Models Used & Comparison Table
 
