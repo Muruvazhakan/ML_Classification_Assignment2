@@ -24,7 +24,7 @@ st.set_page_config(page_title="Universal ML Dashboard", layout="wide")
 
 st.title("📊 Universal Machine Learning Classification Dashboard")
 st.write("BITS Pilani - M.Tech AIML (Machine Learning Assignment 2)")
-st.write("Student: Muruvazhakan Muthuvelu | Roll No: 2026ak05426")
+st.write("Student: Muruvazhakan P | Roll No: 2026ak05426")
 
 # Sidebar Controls
 st.sidebar.header("1. Upload & Settings")
