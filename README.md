@@ -1,39 +1,40 @@
-# Machine Learning Assignment - 2: Classification Models & Deployment
+# Machine Learning Assignment - 2: Bank Marketing Dataset Classification
 
 ## a. Problem Statement
 
-The objective of this project is to implement, evaluate, and compare five distinct Machine Learning classification models on a tabular dataset containing at least 12 features and 500 instances. The saved models are integrated into an interactive Streamlit application deployed on Streamlit Community Cloud for real-time model evaluation and interactive predictions.
+The objective of this assignment is to predict whether a client will subscribe to a term deposit (binary variable 'y') based on direct marketing campaigns of a Portuguese banking institution using five different machine learning classifiers.
 
 ## b. Dataset Description
 
-- **Dataset Name:** Heart Disease / Clinical Risk Prediction Dataset (or your chosen dataset name)
-- **Instances:** 1,000 samples
-- **Features:** 13 input features (numerical and categorical indicators)
-- **Target Feature:** Binary Classification (0 = Low Risk, 1 = High Risk)
+- **Dataset Name:** UCI Bank Marketing Dataset
+- **Source:** https://archive.ics.uci.edu/dataset/222/bank+marketing
+- **Instances:** 10,000 bank-full subset)
+- **Features:** 16 input features (age, job, marital, education, balance, housing, loan, contact, day, month, duration, campaign, pdays, previous, poutcome)
+- **Target:** Binary (`y`: 1 = Subscribed, 0 = Not Subscribed)
 
 ## c. GitHub Repository Link
 
-[Insert Your Public GitHub Repo URL Here, e.g., https://github.com/Muruvazhakan/ML_Classification_Assignment2]
+https://github.com/Muruvazhakan/ML_Classification_Assignment2
 
-## d. Models Used & Comparison Table
+## d. Models Used & Evaluation Metrics
 
-### Metric Comparison Table
+### Comparison Table
 
 | ML Model Name              | Accuracy |  AUC   | Precision | Recall |   F1   |  MCC   |
 | :------------------------- | :------: | :----: | :-------: | :----: | :----: | :----: |
-| **Logistic Regression**    |  0.8450  | 0.9120 |  0.8320   | 0.8540 | 0.8428 | 0.6902 |
-| **Decision Tree**          |  0.7900  | 0.7890 |  0.7810   | 0.7950 | 0.7879 | 0.5801 |
-| **KNN**                    |  0.8250  | 0.8850 |  0.8150   | 0.8300 | 0.8224 | 0.6503 |
-| **Naive Bayes**            |  0.8100  | 0.8910 |  0.8000   | 0.8200 | 0.8099 | 0.6202 |
-| **Support Vector Machine** |  0.8650  | 0.9310 |  0.8550   | 0.8700 | 0.8624 | 0.7304 |
+| **Decision Tree**          |  0.9645  | 0.9157 |  0.4925   | 0.4714 | 0.4818 | 0.4635 |
+| **Logistic Regression**    |  0.9660  | 0.9726 |  0.5312   | 0.2429 | 0.3333 | 0.3443 |
+| **KNN**                    |  0.9635  | 0.8473 |  0.4516   | 0.2000 | 0.2772 | 0.2844 |
+| **Naive Bayes**            |  0.9685  | 0.9552 |  0.5443   | 0.6143 | 0.5772 | 0.5620 |
+| **Support Vector Machine** |  0.9655  | 0.8720 |  0.5455   | 0.0857 | 0.1481 | 0.2066 |
 
 ### Observations on Model Performance
 
-| ML Model Name                        | Observation about model performance                                                                                         |
-| :----------------------------------- | :-------------------------------------------------------------------------------------------------------------------------- |
-| **Logistic Regression**              | Performed well as a baseline model; linear decision boundaries provided consistent precision and recall metrics.            |
-| **Decision Tree**                    | Highly interpretable, but showed mild overfitting on training data, resulting in lower generalization metrics on test data. |
-| **KNN**                              | Captured non-linear patterns effectively; highly sensitive to feature scaling (StandardScaler applied).                     |
-| **Naive Bayes**                      | Extremely fast inference time, though feature independence assumptions slightly impacted overall precision.                 |
-| **Support Vector Machine**           | Delivered the best overall performance with optimal class separation using an RBF kernel.                                   |
-| **Overall Winner for your dataset?** | **Support Vector Machine (SVM)** achieved the highest Accuracy (0.8650), AUC (0.9310), and MCC (0.7304).                    |
+| ML Model Name                        | Observation about model performance                                                                                                    |
+| :----------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------- |
+| **Decision Tree**                    | Strong and balanced model performance with high accuracy and solid MCC, making it a reliable classifier for this dataset.              |
+| **Logistic Regression**              | Best AUC among the models, showing excellent discrimination ability, though recall is comparatively low.                               |
+| **KNN**                              | Good accuracy but weaker recall and F1, suggesting lower sensitivity to positive cases.                                                |
+| **Naive Bayes**                      | Best overall accuracy and strongest recall/F1 balance, indicating the strongest practical classification trade-off.                    |
+| **Support Vector Machine**           | High precision but very low recall, which limits its usefulness for detecting positive cases in this dataset.                          |
+| **Overall Winner for your dataset?** | **Naive Bayes** performed best overall, achieving the highest Accuracy (0.9685), Recall (0.6143), F1 Score (0.5772), and MCC (0.5620). |
